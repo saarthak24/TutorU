@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "39773929912",
+    "firebase_url": "https://tutoru-c7ad4.firebaseio.com",
+    "project_id": "tutoru-c7ad4",
+    "storage_bucket": "tutoru-c7ad4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39773929912:android:e1aceca8e6963a90",
+        "android_client_info": {
+          "package_name": "com.app.saarthak.tutoru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39773929912-20fpg9hoomalg9ecvpio4f883k2gqqht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_5B5UzHWoHJ_bN8bPtOAKNt4E3Jy-nE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
