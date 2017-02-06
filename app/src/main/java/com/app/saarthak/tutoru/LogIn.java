@@ -12,6 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LogIn extends AppCompatActivity {
 
@@ -63,13 +72,45 @@ public class LogIn extends AppCompatActivity {
             mbutton_login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (meditText_email.getText() == null)
+                    if (meditText_email.getText().toString().equals(""))
                         meditText_email.setError("Please enter your email");
-                    if (meditText_password.getText() == null)
+                    if (meditText_password.getText().toString().equals(""))
                         meditText_password.setError("Please enter your password");
                     else {
-                        Intent i = new Intent(LogIn.this, MainActivity.class);
-                        startActivity(i);
+                        Tutor junk = new Tutor("JUNK", "junk@junk.com", "JunkUsername", "JunkPhoneNumber", "JunkPassword", new ArrayList<String>(Arrays.asList("Junksubjects")));
+                        Firebase.setAndroidContext(LogIn.this);
+                        Firebase ref = new Firebase(Config.FIREBASE_URL);
+                        ref.child(junk.getmfullName()).setValue(junk);
+
+                        ref.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot topSnapshot) {
+                                for (DataSnapshot snapshot : topSnapshot.getChildren()) {
+                                    //Getting the data from snapshot
+                                    Tutor t = snapshot.getValue(Tutor.class);
+                                    if(!t.getmfullName().equals("JUNK"))
+                                    {
+                                        if((meditText_email.getText().toString().equals(t.getmEmail())) && (meditText_password.getText().toString().equals(t.getmPassword())))
+                                        {
+                                            Intent i = new Intent(LogIn.this, MainActivity.class);
+                                            startActivity(i);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(LogIn.this, "Invalid Credentials",
+                                                    Toast.LENGTH_SHORT).show();
+                                            meditText_email.setText("");
+                                            meditText_password.setText("");
+                                        }
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(FirebaseError firebaseError) {
+                            }
+                        });
                     }
                 }
             });

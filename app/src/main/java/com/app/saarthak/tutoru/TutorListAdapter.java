@@ -40,11 +40,11 @@ public class TutorListAdapter extends ArrayAdapter<Tutor> {
         name.setText(tutorList.get(position).getmfullName());
 
         String allSubjects = "";
-        String[] subjectsList = tutorList.get(position).getmSubjects();
-        allSubjects += subjectsList[0];
-        for(int i = 1; i < subjectsList.length; i++)
+        ArrayList<String> subjectsList = tutorList.get(position).getmSubjects();
+        allSubjects += subjectsList.get(0);
+        for(int i = 1; i < subjectsList.size(); i++)
         {
-            allSubjects += ", " + subjectsList[i];
+            allSubjects += ", " + subjectsList.get(i);
         }
         subjects.setText(allSubjects);
         return v;

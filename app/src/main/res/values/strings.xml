@@ -3,9 +3,10 @@
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up for TutorU</string>
     <string name="title_activity_main">MainActivity</string>
-
+    <string name="full_name">Full Name</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="student">Student</string>
+    <string name="tutor">Tutor</string>
     <string name="action_settings">Settings</string>
 </resources>

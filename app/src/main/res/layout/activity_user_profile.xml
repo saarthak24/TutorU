@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/login_background" />
+            android:src="@drawable/background" />
 
         <ImageButton
             android:id="@+id/user_profile_photo"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="76dp"
-                android:text="Full Name"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -54,7 +54,7 @@
                 android:layout_below="@+id/user_profile_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
-                android:text="Tutor biography goes here"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="14sp" />
         </RelativeLayout>
@@ -68,6 +68,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/user_profile_subjects"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -75,9 +76,10 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Subjects: Geometry, Algebra, Calculus" />
+                android:text="Subjects: " />
 
             <TextView
+                android:id="@+id/user_profile_username"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -87,9 +89,10 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Username: full_name" />
+                android:text="Username: " />
 
             <TextView
+                android:id="@+id/user_profile_email"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -97,9 +100,10 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Email: sample@email.com" />
+                android:text="Email: " />
 
             <TextView
+                android:id="@+id/user_profile_phone_number"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -109,7 +113,18 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Phone Number: (123) - 456 - 7890" />
+                android:text="Phone Number: " />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="#bf17ab00"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="Call"/>
 
         </LinearLayout>
     </RelativeLayout>
